@@ -33,16 +33,23 @@ function browserSyncInit(baseDir, browser) {
    *
    * For more details and option, https://github.com/chimurai/http-proxy-middleware/blob/v0.9.0/README.md
    */
-  // server.middleware = proxyMiddleware('/users', {target: 'http://jsonplaceholder.typicode.com', changeOrigin: true});
+  // server.middleware = proxyMiddleware('/Fato',
+  //   {
+  //     target: 'http://localhost:51198/api/fatos', 
+  //     changeOrigin: true,
+  //     loglevel:"debug",
+  //     pathRewrite: {'\/Fato\/Listar.+' : ''}
+  //   } 
+  //   );
 
   browserSync.instance = browserSync.init({
     startPath: '/',
     server: server,
     browser: browser,
     ghostMode: false
+
   });
 }
-
 browserSync.use(browserSyncSpa({
   selector: '[ng-app]'// Only needed for angular apps
 }));

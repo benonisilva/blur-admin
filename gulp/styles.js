@@ -21,10 +21,10 @@ gulp.task('styles', function () {
 });
 
 gulp.task('stylesAuth', function () {
-  return buildSingleScss(path.join(conf.paths.src, '/sass/auth.scss'));
+  return buildSingleScss(path.join(conf.paths.src, '/Scripts/sass/auth.scss'));
 });
 gulp.task('styles404', function () {
-  return buildSingleScss(path.join(conf.paths.src, '/sass/404.scss'));
+  return buildSingleScss(path.join(conf.paths.src, '/Scripts/sass/404.scss'));
 });
 
 var buildStyles = function () {
@@ -33,15 +33,15 @@ var buildStyles = function () {
   };
 
   var injectFiles = gulp.src([
-    path.join(conf.paths.src, '/sass/**/_*.scss'),
-    '!' + path.join(conf.paths.src, '/sass/theme/conf/**/*.scss'),
-    '!' + path.join(conf.paths.src, '/sass/404.scss'),
-    '!' + path.join(conf.paths.src, '/sass/auth.scss')
+    path.join(conf.paths.src, '/Scripts/sass/**/_*.scss'),
+    '!' + path.join(conf.paths.src, '/Scripts/sass/theme/conf/**/*.scss'),
+    '!' + path.join(conf.paths.src, '/Scripts/sass/404.scss'),
+    '!' + path.join(conf.paths.src, '/Scripts/sass/auth.scss')
   ], {read: false});
 
   var injectOptions = {
     transform: function (filePath) {
-      filePath = filePath.replace(conf.paths.src + '/sass/', '');
+      filePath = filePath.replace(conf.paths.src + '/Scripts/sass/', '');
       return '@import "' + filePath + '";';
     },
     starttag: '// injector',
@@ -50,7 +50,7 @@ var buildStyles = function () {
   };
 
   return gulp.src([
-    path.join(conf.paths.src, '/sass/main.scss')
+    path.join(conf.paths.src, '/Scripts/sass/main.scss')
   ])
     .pipe($.inject(injectFiles, injectOptions))
     .pipe(wiredep(_.extend({}, conf.wiredep)))
@@ -58,7 +58,7 @@ var buildStyles = function () {
     .pipe($.sass(sassOptions)).on('error', conf.errorHandler('Sass'))
     .pipe($.autoprefixer()).on('error', conf.errorHandler('Autoprefixer'))
     .pipe($.sourcemaps.write())
-    .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app/')));
+    .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/Scripts/app/')));
 };
 
 var buildSingleScss = function (paths) {
@@ -69,5 +69,5 @@ var buildSingleScss = function (paths) {
   return gulp.src([paths])
     .pipe($.sass(sassOptions)).on('error', conf.errorHandler('Sass'))
     .pipe($.autoprefixer()).on('error', conf.errorHandler('Autoprefixer'))
-    .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app/')));
+    .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/Scripts/app/')));
 };

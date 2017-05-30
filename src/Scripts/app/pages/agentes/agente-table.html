@@ -1,0 +1,21 @@
+
+<div ba-panel ba-panel-class="with-scroll table-panel">
+    <table class="table table-bordered table-hover table-condensed">
+    <tr>
+        <td></td>
+        <td>Nome</td>
+        <td>Matricula</td>
+        <td>Ações</td>
+    </tr>
+    <tr ng-repeat="agente in vm.agentes" class="editable-row"> 
+        <td></td>
+        <td>{{agente.Nome}}</td>
+        <td>{{agente.Matricula}}</td>
+        <td>
+            <div class="buttons">
+                <button ng-click="vm.deletar(agente.AgenteId)" class="btn btn-primary">Deletar</button>
+            </div>
+        </td>
+    </tr>
+</table>
+</div>

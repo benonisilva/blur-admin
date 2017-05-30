@@ -10,8 +10,8 @@ var $ = require('gulp-load-plugins')({
 
 gulp.task('partials', function () {
   return gulp.src([
-    path.join(conf.paths.src, '/app/**/*.html'),
-    path.join(conf.paths.tmp, '/serve/app/**/*.html')
+    path.join(conf.paths.src, '/Scripts/**/*.html'),
+    path.join(conf.paths.tmp, '/serve/Scripts/**/*.html')
   ])
     .pipe($.minifyHtml({
       empty: true,
@@ -85,7 +85,7 @@ gulp.task('other', ['copyVendorImages'], function () {
   return gulp.src([
     path.join(conf.paths.src, '/**/*'),
     path.join('!' + conf.paths.src, '/**/*.{html,css,js,scss,md}'),
-    path.join(conf.paths.tmp, '/serve/**/assets/img/theme/vendor/**/*')
+    path.join(conf.paths.tmp, '/serve/**/Scripts/assets/img/theme/vendor/**/*')
   ])
     .pipe(fileFilter)
     .pipe(gulp.dest(path.join(conf.paths.dist, '/')));

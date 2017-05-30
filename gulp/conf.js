@@ -16,7 +16,8 @@ exports.paths = {
   dist: 'release',
   devDist: 'dev-release',
   tmp: '.tmp',
-  e2e: 'e2e'
+  e2e: 'e2e',
+  aspPath : 'C://Users//benon//Source//Repos//ProconWebApp.Administrador'
 };
 
 /**

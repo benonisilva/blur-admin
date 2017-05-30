@@ -17,16 +17,16 @@ gulp.task('inject-reload', ['inject'], function () {
 
 gulp.task('inject', ['scripts', 'styles', 'injectAuth', 'inject404', 'copyVendorImages'], function () {
   var injectStyles = gulp.src([
-    path.join(conf.paths.tmp, '/serve/app/main.css'),
-    path.join('!' + conf.paths.tmp, '/serve/app/vendor.css')
+    path.join(conf.paths.tmp, '/serve/Scripts/app/main.css'),
+    path.join('!' + conf.paths.tmp, '/serve/Scripts/app/vendor.css')
   ], {read: false});
 
   var injectScripts = gulp.src([
-    path.join(conf.paths.src, '/assets/js/**/*.js'),
-    path.join(conf.paths.src, '/app/**/*.module.js'),
-    path.join(conf.paths.src, '/app/**/*.js'),
-    path.join('!' + conf.paths.src, '/app/**/*.spec.js'),
-    path.join('!' + conf.paths.src, '/app/**/*.mock.js'),
+    path.join(conf.paths.src, '/Scripts/assets/js/**/*.js'),
+    path.join(conf.paths.src, '/Scripts/app/**/*.module.js'),
+    path.join(conf.paths.src, '/Scripts/app/**/*.js'),
+    path.join('!' + conf.paths.src, '/Scripts/app/**/*.spec.js'),
+    path.join('!' + conf.paths.src, '/Scripts/app/**/*.mock.js'),
   ])
     /*.pipe($.angularFilesort())*/.on('error', conf.errorHandler('AngularFilesort'));
 
@@ -44,14 +44,14 @@ gulp.task('inject', ['scripts', 'styles', 'injectAuth', 'inject404', 'copyVendor
 
 gulp.task('injectAuth', ['stylesAuth'], function () {
   return injectAlone({
-    css: [path.join('!' + conf.paths.tmp, '/serve/app/vendor.css'), path.join(conf.paths.tmp, '/serve/app/auth.css')],
+    css: [path.join('!' + conf.paths.tmp, '/serve/Scripts/app/vendor.css'), path.join(conf.paths.tmp, '/serve/Scripts/app/auth.css')],
     paths: [path.join(conf.paths.src, '/auth.html'), path.join(conf.paths.src, '/reg.html')]
   })
 });
 
 gulp.task('inject404', ['styles404'], function () {
   return injectAlone({
-    css: [path.join('!' + conf.paths.tmp, '/serve/app/vendor.css'), path.join(conf.paths.tmp, '/serve/app/404.css')],
+    css: [path.join('!' + conf.paths.tmp, '/serve/Scripts/app/vendor.css'), path.join(conf.paths.tmp, '/serve/Scripts/app/404.css')],
     paths: path.join(conf.paths.src, '/404.html')
   })
 });
