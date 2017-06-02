@@ -14,7 +14,7 @@
         return $uibModal.open({
           animation: false,
           templateUrl: 'Scripts/app/pages/autos/modals/constatacao/modal-remover-auto.html',
-          controller: 'RemoverAutoConstatacaoCtrl',
+          controller: 'RemoverAutoCtrl',
           controllerAs: 'boxCtrl',
           resolve: {
             auto: function () {

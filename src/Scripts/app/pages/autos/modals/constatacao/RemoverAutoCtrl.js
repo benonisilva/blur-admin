@@ -16,14 +16,22 @@
     vm.remover = function(auto){
     	vm.loading = true;
       console.log(auto);
-    	autoConstatacaoService.removerAuto(auto.AutoConstatacaoId).then(function(result){
+    	autoConstatacaoService.removerAuto(auto.id).then(function(result){
     		vm.loading = false;
-    		console.log(result||"nulo");
-    		$uibModalInstance.close('ok');
-        toastr.success("Salvo!")
+        console.log(result||"nulo");
+        if(result.data.msg==="removido"){
+          
+    		  $uibModalInstance.close('ok');
+          toastr.success("Removido!");
+        }else if(result.data.msg==="contem_auto"){
+    
+    		  $uibModalInstance.close('ok');
+          toastr.error("Contem uma Denúncia Associada. Não pode ser removido!");
+        }
+    		
     	},function(err){
     		$uibModalInstance.close('ok');
-        toastr.success(err);
+        toastr.error(err);
     	})
     }
   }

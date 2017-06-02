@@ -18,7 +18,8 @@
    vm.url = apiConfig.url;
    console.log(autos);
    vm.removerAuto = function(id){
-  		removerModalsService.open({
+  		console.log(id);
+      removerModalsService.open({
   			id : id
   		})
   	};
@@ -32,3 +33,5 @@
   }
 
 })();
+
+

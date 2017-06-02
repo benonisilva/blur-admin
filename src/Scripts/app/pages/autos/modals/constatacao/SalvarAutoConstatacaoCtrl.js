@@ -22,7 +22,12 @@
         if(result.data.msg==="salvo"){
           $uibModalInstance.close('ok');
           toastr.success("Salvo!");
-        }else{
+        }
+        else if(result.data.msg==="editado"){
+          $uibModalInstance.close('ok');
+          toastr.success("Editado!");
+        }
+        else{
           $uibModalInstance.close('ok');
           toastr.error("Não Tem Permissão!");
         }
