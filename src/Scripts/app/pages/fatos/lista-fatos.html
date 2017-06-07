@@ -10,7 +10,7 @@
       <th st-sort="Empresa.Cnpj">Cnpj</th>
       <th st-sort="Alterador.Matricula">Agente</th>
       <th st-sort="Data">Ult. Atualização</th>
-      <th ng-if="vm.fatos[0].Status.Nome!='Constatado'" st-sort="Status.Nome">Status</th>
+      <th ng-if="vm.fatos[0].Status.Nome!='Constatada'" st-sort="Status.Nome">Status</th>
       <th></th>
     </tr>
     <tr>
@@ -24,7 +24,7 @@
       <th><input st-search="Data" placeholder="Data" class="input-sm form-control search-input" type="search"/>
       </th>
       
-      <th ng-if="vm.fatos[0].Status.Nome!='Constatado'">
+      <th ng-if="vm.fatos[0].Status.Nome!='Constatada'">
         <select st-search="Status.Nome" class="form-control" id="predicate">
           <option value="">Todos</option>
           <option ng-repeat="status in vm.status" value="{{status.Nome}}">{{status.Nome}}</option>
@@ -41,13 +41,13 @@
       <td>{{fato.Alterador.Nome}}</td>
       <td>{{fato.Data | date : 'dd/MM/yy'}}</td>
       <td>{{fato.Status.Nome}}</td>
-      <td  ng-if="vm.fatos[0].Status.Nome!='Constatado'">
+      <td  ng-if="vm.fatos[0].Status.Nome!='Constatada'">
         <div class="buttons">
           <button class="btn btn-primary editable-table-button btn-xs" ui-sref="fatos.detalhes({id:fato.FatoId})">Detalhes</button>
         </div>
       </td>
           
-       <td ng-if="vm.fatos[0].Status.Nome=='Constatado'">
+       <td ng-if="vm.fatos[0].Status.Nome=='Constatada'">
         <div class="buttons">
           <button class="btn btn-primary editable-table-button btn-xs" ui-sref="autos.constatacaoForm({empresaId: fato.Empresa.EmpresaId, autoId: fato.AutoConstatacao.AutoConstatacaoId})">Editar</button>
           <a type="button"  href="{{vm.url}}Auto/GerarAuto/{{fato.AutoConstatacao.AutoConstatacaoId}}"  target="_blank" class="btn btn-with-icon"><i class="ion-printer"></i>Gerar Doc.</a>
