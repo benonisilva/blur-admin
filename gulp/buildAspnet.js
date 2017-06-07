@@ -34,19 +34,19 @@ gulp.task('asp-concat-login',function () {
 
 gulp.task('asp-replace-ref', function () {
     return gulp.src(conf.paths.devDist+'/index.html')
-    .pipe(replace('\"lib\/','"Scripts/lib/'))
-    .pipe(replace(/\"\.\.\/bower_components\/.*\/([aA-zZ][aA-zZ]*.*\.js)/g,'"Scripts/lib/$1'))
-    .pipe(replace('\"app\/','"Scripts/app/'))
-    .pipe(replace('\"assets\/','"Scripts/assets/'))
+    .pipe(replace('\"lib\/','"~/Scripts/lib/'))
+    .pipe(replace(/\"\.\.\/bower_components\/.*\/([aA-zZ][aA-zZ]*.*\.js)/g,'"~/Scripts/lib/$1'))
+    .pipe(replace('\"app\/','"~/Scripts/app/'))
+    .pipe(replace('\"assets\/','"~/Scripts/assets/'))
     .pipe(gulp.dest(conf.paths.devDist+'/tmp'));
 });
 
 gulp.task('asp-replace-ref-login', function () {
     return gulp.src(conf.paths.devDist+'/auth.html')
-    .pipe(replace('\"lib\/','"Scripts/lib/'))
-    .pipe(replace(/\"\.\.\/bower_components\/.*\/([aA-zZ][aA-zZ]*.*\.js)/g,'"Scripts/lib/$1'))
-    .pipe(replace('\"app\/','"Scripts/app/'))
-    .pipe(replace('\"assets\/','"Scripts/assets/'))
+    .pipe(replace('\"lib\/','"~/Scripts/lib/'))
+    .pipe(replace(/\"\.\.\/bower_components\/.*\/([aA-zZ][aA-zZ]*.*\.js)/g,'"~/Scripts/lib/$1'))
+    .pipe(replace('\"app\/','"~/Scripts/app/'))
+    .pipe(replace('\"assets\/','"~/Scripts/assets/'))
     .pipe(gulp.dest(conf.paths.devDist+'/tmp'));
 });
 

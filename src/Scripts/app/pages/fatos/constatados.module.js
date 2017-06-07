@@ -15,12 +15,16 @@
           url: '/constatados',
           templateUrl: 'Scripts/app/pages/fatos/lista-fatos.html',
           title: 'Fatos Constatados',
-          controller : 'FatosCtrl',
+          controller : 'ConstatadosCtrl',
           controllerAs : 'vm',
           resolve : {
-            fatos : function(fatosService){
-                  return fatosService.getByStatus(2005)
-            }
+
+            fatos : function(fatosService) {
+                var constatacao = [{StatusFatoId:6}];
+                return fatosService.getByStatus(6);
+              }
+            ,
+            
           },
           sidebarMeta: {
             order: 300,

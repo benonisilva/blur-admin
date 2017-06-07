@@ -9,15 +9,15 @@
     .controller('FatosDetalheCtrl', FatosDetalheCtrl);
 
   /** @ngInject */
-  function FatosDetalheCtrl(fato,statusFatosService,fatosService,toastr) {
+  function FatosDetalheCtrl(fato,fatosService,toastr,status) {
     
     var vm = this;
     vm.msg = "";
   	fato = fato.data.fato;
   	vm.fato = fato;
   	vm.fato.Data = new Date(fato.Data);
-  	vm.status = statusFatosService.getStatus();
-    vm.fato.Status = vm.status[vm.fato.Status.StatusFatoId -1];
+  	vm.status = status.data.lista;
+    vm.fato.Status = vm.status[vm.fato.Status.StatusFatoId];
     vm.anexos = [];
     vm.carrega = function(id){
       console.log("carregando fotos...")

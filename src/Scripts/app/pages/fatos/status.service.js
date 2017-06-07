@@ -9,45 +9,12 @@
     .service('statusFatosService', statusFatosService);
 
   /** @ngInject */
-  function statusFatosService() {
-    
-    var status = [
-    	{
-      		StatusFatoId: 1,
-      		Nome: 'Recebido',
-					Msg:  ""
-    	}, 
-    	{
-      		StatusFatoId: 2,
-      		Nome: 'Processado',
-					Msg:  ""
-    	}, 
-    	{
-      		StatusFatoId: 3,
-      		Nome: 'Falta Documentação',
-					Msg:  ""
-    	},
-    	{
-    		StatusFatoId : 4,
-    		Nome : 'Arquivado',
-				Msg:  ""
-    	},
-			{
-    		StatusFatoId : 5,
-    		Nome : 'Em Análise',
-				Msg:  ""
-    	},
-			{
-    		StatusFatoId : 2005,
-    		Nome : 'Constatado',
-				Msg:  ""
-    	}
-			
-    ];
-
-    return{
-      getStatus : function(){
-        return status
+  function statusFatosService($http) {
+  
+    return {
+      getStatus : function () {
+				return $http.get("/Status/Listar");
+        
       }
     }
 

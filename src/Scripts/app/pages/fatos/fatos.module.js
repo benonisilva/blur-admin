@@ -33,6 +33,9 @@
           resolve : {
             fato : function(fatosService,$stateParams){
               return fatosService.getFatoById($stateParams.id)
+            },
+            status : function(statusFatosService){
+              return statusFatosService.getStatus()
             }
           }
 

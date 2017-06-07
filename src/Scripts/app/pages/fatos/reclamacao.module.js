@@ -20,7 +20,10 @@
           resolve : {
             fatos : function(fatosService){
                   return fatosService.getFatos(1);
-            }
+            },
+            status : function (statusFatosService) {
+              return statusFatosService.getStatus();
+            } 
           },
           sidebarMeta: {
             order: 100,
