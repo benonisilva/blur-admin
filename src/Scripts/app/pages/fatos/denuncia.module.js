@@ -23,7 +23,7 @@
             },
             status : function (statusFatosService) {
               return statusFatosService.getStatus();
-            } 
+            }
           },
           sidebarMeta: {
             order: 200,

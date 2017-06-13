@@ -9,6 +9,7 @@
     'BlurAdmin.pages.fatos.denuncias',
     'BlurAdmin.pages.fatos.reclamacoes',
      'BlurAdmin.pages.fatos.constatados',
+     'BlurAdmin.pages.fatos.finalizados',
   ])
   .config(routeConfig);
 

@@ -1,32 +1,30 @@
 /**
  * @author benonims
- * created on 11/05/17
+ * created on 13.06.2017
  */
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.fatos.constatados', [])
+  angular.module('BlurAdmin.pages.fatos.finalizados', [])
       .config(routeConfig);
 
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-        .state('fatos.constatados', {
-          url: '/constatados',
+        .state('fatos.finalizados', {
+          url: '/finalizados',
           templateUrl: 'Scripts/app/pages/fatos/lista-fatos.html',
-          title: 'Em Averiguação',
-          controller : 'ConstatadosCtrl',
+          title: 'Finalizados',
+          controller : 'FinalizadosCtrl',
           controllerAs : 'vm',
           resolve : {
-
             fatos : function(fatosService) {
-                return fatosService.getByStatus(4);
-              }
-            ,
-            
+                return fatosService.getFatosFinalizados();
+            },
+     
           },
           sidebarMeta: {
-            order: 300,
+            order: 400,
           },
         });
   }

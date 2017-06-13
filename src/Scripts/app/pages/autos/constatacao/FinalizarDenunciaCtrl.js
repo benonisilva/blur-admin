@@ -24,6 +24,7 @@
    
    vm.finaliza = function (envio) {
       console.log(envio);
+      
       dados.DataEntrega = envio.DataEntrega;
       dados.DataConclusao = envio.DataConclusao;
       dados.Mensagem = envio.Mensagem;

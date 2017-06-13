@@ -21,6 +21,9 @@
       getFatos : function(tipoId){
           return $http.get(apiConfig.url+"Fato/Listar?tipoId="+tipoId)
       },
+      getFatosFinalizados : function(tipoId){
+          return $http.get(apiConfig.url+"Fato/Finalizados")
+      },
       setStatus : function(id,novoStatus){
           return $http.post(apiConfig.url+"Fato/EditarStatus?id="+id,novoStatus);
       },
