@@ -58,7 +58,19 @@
     </form>
 </ba-wizard-step>
 <ba-wizard-step title="Finaliza">
-  <form class="form-horizontal" name="vm.finishForm" novalidate>
-      <button type="submit" class="btn btn-success" ng-click="vm.salvarAuto()">Salvar Constatação</button>                    
+    <form class="form-horizontal" name="vm.finishForm" novalidate>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group has-feedback"
+                ng-class="{'has-error': vm.addressForm.address.$invalid && (vm.addressForm.address.$dirty || vm.addressForm.$submitted)}">
+                    <label for="productName">Agente</label>
+                    <select class="form-control" title="Agente"
+                     data-ng-model="vm.autoData.Agente"
+                     ng-options="agente as agente.Nome for agente in vm.agentes">
+                    </select>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success" ng-click="vm.salvarAuto()">Salvar Constatação</button>     
     </form>
  </ba-wizard-step>

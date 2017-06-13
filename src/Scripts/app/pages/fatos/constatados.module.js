@@ -14,14 +14,13 @@
         .state('fatos.constatados', {
           url: '/constatados',
           templateUrl: 'Scripts/app/pages/fatos/lista-fatos.html',
-          title: 'Fatos Constatados',
+          title: 'Em Averiguação',
           controller : 'ConstatadosCtrl',
           controllerAs : 'vm',
           resolve : {
 
             fatos : function(fatosService) {
-                var constatacao = [{StatusFatoId:6}];
-                return fatosService.getByStatus(6);
+                return fatosService.getByStatus(4);
               }
             ,
             

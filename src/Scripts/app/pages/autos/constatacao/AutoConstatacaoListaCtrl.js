@@ -14,22 +14,31 @@
    console.log("AutoConstatacaoListaCtrl:init");
 
    var vm = this;
-   vm.autos = autos.data.autos;
+   vm.autos = [];
+   init();
    vm.url = apiConfig.url;
-   console.log(autos);
+   //console.log(autos);
    vm.removerAuto = function(id){
   		console.log(id);
       removerModalsService.open({
   			id : id
   		})
   	};
+   
+   function init () {
+     
+     var  lista = autos.data.autos;
+      
+      lista.forEach(function(element) {
+          var retVal = element.Prazo.slice((6,19))
+          var retDate = new Date(retVal);
+          console.log(retDate);
+          element.Prazo = retDate;
+          vm.autos.push(element);
+      }, this);
+      return vm.autos;
+   }
 
-  	// vm.gerarAuto = function(id){
-  	// 	console.log(id||"null vm.gerarAuto");
-  	// 	modalGerarAuto.open({
-  	// 		id : id
-  	// 	})
-  	// };
   }
 
 })();

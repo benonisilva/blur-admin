@@ -13,7 +13,8 @@
           scope: {
             
             autoData : '=',
-            enviar : '&'
+            enviar : '&',
+            agentes: '='
 
           }
        };

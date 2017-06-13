@@ -19,7 +19,8 @@
       	return $http.get(apiConfig.url+"Agente/"+id)
       },
       save : function(agente){
-      	return $http.post(apiConfig.url+"Agente/Adicionar",agente)
+      	console.log(agente);
+        return $http.post(apiConfig.url+"Agente/Adicionar",agente)
       },
       remove : function(id){
       	return $http.delete(apiConfig.url+"Agente/Deletar/"+id)

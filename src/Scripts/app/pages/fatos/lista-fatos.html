@@ -7,7 +7,7 @@
     <tr class="sortable">
       <th class="table-id" st-sort="id" st-sort-default="true">#</th>
       <th st-sort="Empresa.NomeFantasia">Nome Empresa</th>
-      <th st-sort="Empresa.Cnpj">Cnpj</th>
+      <th st-sort="Empresa.Endereco.Rua">Rua</th>
       <th st-sort="Alterador.Matricula">Agente</th>
       <th st-sort="Data">Ult. Atualização</th>
       <th ng-if="vm.fatos[0].Status.Nome!='Constatada'" st-sort="Status.Nome">Status</th>
@@ -17,7 +17,7 @@
       <th></th>
       <th><input st-search="Empresa.NomeFantasia" placeholder="Nome Empresa" class="input-sm form-control search-input"
                  type="search"/></th>
-      <th><input st-search="Empresa.Cnpj" placeholder="CNPJ" class="input-sm form-control search-input"
+      <th><input st-search="Empresa.Endereco.Rua" placeholder="Rua" class="input-sm form-control search-input"
                  type="search"/></th>
                  <th><input st-search="Alterador.Nome" placeholder="Nome" class="input-sm form-control search-input"
                  type="search"/></th>
@@ -37,7 +37,7 @@
     <tr ng-repeat="fato in vm.fatos">
       <td class="table-id">{{fato.FatoId}}</td>
       <td>{{fato.Empresa.NomeFantasia}}</td>
-      <td>{{fato.Empresa.Cnpj}}</td>
+      <td>{{fato.Empresa.Endereco.Rua}}</td>
       <td>{{fato.Alterador.Nome}}</td>
       <td>{{fato.Data | date : 'dd/MM/yy'}}</td>
       <td>{{fato.Status.Nome}}</td>

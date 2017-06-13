@@ -15,17 +15,17 @@
       vm.agente = {};
 
       vm.adicionar = function name(agente) {
-          agente.Nome = agente.Nome+agente.sobrenome;
+          agente.Nome = agente.Nome+" "+agente.sobrenome;
           AgenteService.save(agente).then(function (success) {
                if(success.data.success===true){
                  toastr.success('Agente Salvo.');
                } else {
                    
-                   toastr.error("Não Tem Permissão");
+                   toastr.error("Erro: "+ success.data.errors);
                }
                
           }, function (error) {
-              toastr.error("Não Tem Permissão");
+              toastr.error("Erro na aplicação.");
           });
       };
   }

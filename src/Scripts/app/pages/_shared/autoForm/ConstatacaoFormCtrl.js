@@ -7,6 +7,7 @@
       function ConstatacaoFormCtrl($scope) {
           var vm = this;
           vm.autoData.DataAutuacao = new Date(Date.now());
+         vm.status = [{StatusConstatacaoId:2,Nome:"Devolvido"},{StatusConstatacaoId:3,Nome:"Constatado"}]
           vm.salvarAuto = function () {
               console.log("AutoConstatacaoFormCtrl:salvarAuto");
               vm.enviar();

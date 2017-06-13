@@ -21,12 +21,26 @@
             order: 250,
           },
         })
+
+        .state('autos.finalizar', {
+          url: '/finalizar/:id',
+          templateUrl: 'Scripts/app/pages/autos/constatacao/finalizar.html',
+          controller : 'FinalizarDenunciaCtrl',
+          controllerAs : 'vm',
+          title: 'Finalizar Denúncia',
+          resolve : {
+            ConstatacaoId : function($stateParams){
+              return $stateParams.id
+            }
+          }
+        })
+        
         .state('autos.constatacao', {
           url: '/constatacao',
           templateUrl: 'Scripts/app/pages/autos/constatacao/lista.html',
           controller : 'AutoConstatacaoListaCtrl',
           controllerAs : 'vm',
-          title: 'Formularios de Constatação',
+          title: 'Formulários de Averiguação',
           sidebarMeta: {
             order: 0,
           },
@@ -37,59 +51,26 @@
             }
           }
         })
-        // .state('autos.infracao', {
-        //   url: '/infracao',
-        //   templateUrl: 'Scripts/app/pages/autos/infracao/lista.html',
-        //   controller : 'AutoInfracaoListaCtrl',
-        //   controllerAs : 'vm',
-        //   title: 'Formulário de Infração',
-        //   sidebarMeta: {
-        //     order: 1,
-        //   },
-        //   resolve : {
-        //     autos : function(autoConstatacaoService){
-        //       console.log("resolve:autos.infracao")
-        //       return autoConstatacaoService.getAutos()
-        //     }
-        //   }
-        // })
-        // .state('autos.infracaoForm',
-        // {
-        //   url: '/infracaoForm/:id/:autoId',
-        //   templateUrl: 'Scripts/app/pages/autos/constatacao/constatacao.form.html',
-        //   controller: 'AutoConstatacaoCriarCtrl',
-        //   controllerAs: 'vm',
-        //   title: 'Criar Formulário de Infração',
-        //   resolve : {
-        //     empresa : function($stateParams,autoConstatacaoService){
-        //       return autoConstatacaoService.getEmpresaById($stateParams.id)
-        //     },
-        //     auto : function($stateParams,autoConstatacaoService){
-        //        return autoConstatacaoService.getAutoById($stateParams.autoId)
-        //     }
-        //   },
-        //   sidebarMeta: {
-        //     order: 200,
-        //   },
-        // })
+       
         .state('autos.constatacaoForm',
         {
           url: '/constatacaoForm/:fatoId/:autoId',
           templateUrl: 'Scripts/app/pages/autos/constatacao/constatacao.form.html',
           controller: 'AutoConstatacaoCriarCtrl',
           controllerAs: 'vm',
-          title: 'Criar Formulário de Constatação',
+          title: 'Criar Formulário de Averiguação',
           resolve : {
             fato : function($stateParams,autoConstatacaoService){
               return autoConstatacaoService.getFatoById($stateParams.fatoId)
             },
             auto : function($stateParams,autoConstatacaoService){
                return autoConstatacaoService.getAutoById($stateParams.autoId)
-            }
+            },
+            agentes : function(autoConstatacaoService) {
+                return autoConstatacaoService.getAgentes()
+            },
           },
-          sidebarMeta: {
-            order: 200,
-          },
+
         });
   }
 })();
