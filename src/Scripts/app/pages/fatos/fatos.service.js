@@ -32,6 +32,9 @@
       },
       getByStatus : function (id) {
         return $http.get(apiConfig.url+"Fato/Status?statusId="+id)
+      },
+      getTrotes : function () {
+        return $http.get(apiConfig.url+"Fato/Trotes")
       }
     }
 

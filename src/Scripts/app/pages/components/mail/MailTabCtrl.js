@@ -13,6 +13,7 @@
 
     var vm = this;
     vm.navigationCollapsed = true;
+    
     vm.showCompose = function(subject, to , text){
       composeModal.open({
         subject : subject,

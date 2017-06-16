@@ -10,22 +10,38 @@
 
   /** @ngInject */
   function FatosDetalheCtrl(fato,fatosService,toastr,status) {
-    
+    console.log("Init:FatosDetalheCtrl");
     var vm = this;
+    init();
     vm.msg = "";
-  	fato = fato.data.fato;
-  	vm.fato = fato;
-  	vm.fato.Data = new Date(fato.Data);
-  	vm.status = status.data.lista;
-    vm.fato.Status = vm.status[vm.fato.Status.StatusFatoId];
     vm.anexos = [];
-    vm.carrega = function(id){
+    
+    vm.carregaProvas = function(id){
       console.log("carregando fotos...")
       fatosService.getAnexos(id).then(function(data){
        vm.anexos = JSON.parse(data.data).anexos;
        console.log("ok");
       })
     }
+
+    vm.showAveriguarArea = function (fato) {
+      var nome = fato.Status.Nome;
+      console.log(nome);
+      //mudar para array de status q nao mostra e filtrar.
+      return   !(nome === "Averiguando" || 
+               nome === "Constatada" ||
+               nome === "Não Constatada" || nome === "Trote");
+
+    };
+
+    function init () {
+      var fatoView = fato.data.fato;
+      vm.fato = fatoView;
+      vm.fato.Data = new Date(fatoView.Data);
+      vm.status = status.data.lista;
+      return vm;
+    }
+
   	vm.alterarStatus = function(id,novo){
   		console.log(id);
   		console.log(novo);
@@ -40,6 +56,6 @@
         toastr.error(erro);
       });
   	}
-  	console.log("Init:FatosDetalheCtrl");
+  	
   }
 })();

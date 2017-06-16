@@ -9,15 +9,15 @@
 
     'BlurAdmin.pages.dashboard',
     // 'BlurAdmin.pages.ui',
-    // 'BlurAdmin.pages.components',
+    'BlurAdmin.pages.components',
     // 'BlurAdmin.pages.form',
     // 'BlurAdmin.pages.tables',
     // 'BlurAdmin.pages.charts',
     // 'BlurAdmin.pages.maps',
     // 'BlurAdmin.pages.profile',
-    // 'BlurAdmin.pages.agentes',
-    'BlurAdmin.pages.autos',
     'BlurAdmin.pages.fatos',
+    'BlurAdmin.pages.autos',
+    'BlurAdmin.pages.agentes',
     
   ];
   angular.module('BlurAdmin.pages',routes)

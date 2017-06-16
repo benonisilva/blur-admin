@@ -128,7 +128,7 @@
                         </form>
                     </ba-wizard-step>
                      <ba-wizard-step title="Provas">
-                        <button  class="btn btn-success with-line text-center btn-with-icon" ng-click="vm.carrega(vm.fato.FatoId)">Carregar</button>
+                        <button  class="btn btn-success with-line text-center btn-with-icon" ng-click="vm.carregaProvas(vm.fato.FatoId)">Carregar</button>
                          <div class="row">
                              <h3 class="with-line text-center">Provas</h3>
                              <div class="col-md-12">
@@ -143,7 +143,7 @@
                              </div>
                          </div>
                      </ba-wizard-step>
-                    <ba-wizard-step title="Finaliza">
+                    <ba-wizard-step ng-if="vm.showAveriguarArea(vm.fato)" title="Finaliza">
                         <form class="form-horizontal" name="vm.finishForm" novalidate>
                          <div class="row">
                              <div class="col-md-12">

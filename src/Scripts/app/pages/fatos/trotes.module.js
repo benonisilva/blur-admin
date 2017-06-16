@@ -1,33 +1,31 @@
 /**
  * @author benonims
- * created on 11/02/17
+ * created on 10/02/17
  */
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.fatos.reclamacoes', [])
+  angular.module('BlurAdmin.pages.fatos.trotes', [])
       .config(routeConfig);
 
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-        .state('fatos.reclamacoes', {
-          url: '/reclamacoes',
+        .state('fatos.trotes', {
+          url: '/trotes',
           templateUrl: 'Scripts/app/pages/fatos/lista-fatos.html',
-          title: 'Reclamações',
-          controller : 'FatosCtrl',
+          title: 'Trotes',
+          controller : 'TrotesCtrl',
           controllerAs : 'vm',
           resolve : {
             fatos : function(fatosService){
-                  return fatosService.getFatos(2)
-            },
-            status : function (statusFatosService) {
-              return statusFatosService.getStatus();
+                  return fatosService.getTrotes();
             }
           },
           sidebarMeta: {
-            order: 400,
+            order: 500,
           },
         });
   }
+
 })();

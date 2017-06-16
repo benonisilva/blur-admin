@@ -17,7 +17,7 @@
           templateUrl: 'Scripts/app/pages/components/mail/mail.html',
           controller: "MailTabCtrl",
           controllerAs: "tabCtrl",
-          title: 'Mail',
+          title: 'Denúncias',
           sidebarMeta: {
             order: 0,
           },

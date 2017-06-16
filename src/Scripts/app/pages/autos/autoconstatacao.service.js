@@ -19,7 +19,9 @@
       getAutos : function(){
           return $http.get(apiConfig.url+"Auto/Listar/")
       },
-      
+      getAutosFinalizados : function(){
+          return $http.get(apiConfig.url+"Auto/Finalizados/")
+      },
       getAutoById : function(id){
       	return $http.get(apiConfig.url+"Auto?id="+id)
       },

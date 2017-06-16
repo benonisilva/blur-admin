@@ -51,6 +51,23 @@
             }
           }
         })
+
+        .state('autos.finalizados', {
+          url: '/autosfinalizados',
+          templateUrl: 'Scripts/app/pages/autos/constatacao/lista-finalizados.html',
+          controller : 'AutosFinalizadosListaCtrl',
+          controllerAs : 'vm',
+          title: 'Constatações Finalizadas',
+          sidebarMeta: {
+            order: 100,
+          },
+          resolve : {
+            autos : function(autoConstatacaoService){
+              console.log("resolve:autos.autosfinalizados")
+              return autoConstatacaoService.getAutosFinalizados()
+            }
+          }
+        })
        
         .state('autos.constatacaoForm',
         {

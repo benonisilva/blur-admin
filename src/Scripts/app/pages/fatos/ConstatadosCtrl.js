@@ -12,6 +12,8 @@
     console.log("ConstatadosCtrl:Init");
   	
     var vm = this;
+    vm.isFinalizados = false;
+    vm.isAveriguando = true;
     vm.fatos = fatos.data.fatos;
 
   }

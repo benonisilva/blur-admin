@@ -6,9 +6,9 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.fatos')
-    .controller('FinalizadosCtrl', FinalizadosCtrl);
+    .controller('TrotesCtrl', TrotesCtrl);
   /** @ngInject */
-  function FinalizadosCtrl(fatos) {
+  function TrotesCtrl(fatos) {
     console.log("FinalizadosCtrl:Init");
   	
     var vm = this;

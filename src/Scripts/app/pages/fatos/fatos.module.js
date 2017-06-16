@@ -10,6 +10,7 @@
     'BlurAdmin.pages.fatos.reclamacoes',
      'BlurAdmin.pages.fatos.constatados',
      'BlurAdmin.pages.fatos.finalizados',
+     'BlurAdmin.pages.fatos.trotes'
   ])
   .config(routeConfig);
 
@@ -23,7 +24,7 @@
           title: 'Fatos Enviados',
           sidebarMeta: {
             icon: 'ion-android-laptop',
-            order: 200,
+            order: 100,
           },
     }).state('fatos.detalhes',{
           url : '/:id',

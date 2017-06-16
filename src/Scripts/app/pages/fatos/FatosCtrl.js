@@ -15,6 +15,8 @@
 
     vm.statusNome = "";
     vm.fatos = fatos.data.fatos;
+    vm.isFinalizados = false;
+    vm.isAveriguando = false;
     vm.status = status.data.lista;
     console.log(fatos.data.fatos);
     console.log(status.data.lista);
