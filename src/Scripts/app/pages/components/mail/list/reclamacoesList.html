@@ -7,7 +7,7 @@
     </div>
     
   </div>
-  <div ba-panel ba-panel-title="Situaçao" ba-panel-class="with-scroll" >
+  <div ba-panel ba-panel-title="Reclamações" ba-panel-class="with-scroll" >
     <div class="widgets">
       <div class="row">
         <div class="col-md-12">
@@ -33,12 +33,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="side-message-navigation-item little-human shineHover"  ng-repeat="fato in vm.localFatos track by $index">
+            <tr class="side-message-navigation-item little-human shineHover" ng-repeat="fato in vm.localFatos track by $index">
               <td class="table-id">{{fato.FatoId}}</td>
-              <td ui-sref="components.mail.detail({id: fato.FatoId, status: fato.Status.StatusFatoId})" >{{fato.Empresa.NomeFantasia}}</td>
-              <td  ui-sref="components.mail.detail({id: fato.FatoId, status: fato.Status.StatusFatoId})" >{{fato.Empresa.Endereco.Rua}}</td>
-              <td  ui-sref="components.mail.detail({id: fato.FatoId, status: fato.Status.StatusFatoId})" >{{fato.Alterador.Nome}}</td>
-              <td  ui-sref="components.mail.detail({id: fato.FatoId, status: fato.Status.StatusFatoId})" >{{fato.ConsumidorEmail}}</td>
+              <td ui-sref="components.reclamacoes.detail({id: fato.FatoId, status: fato.Status.StatusFatoId})" >{{fato.Empresa.NomeFantasia}}</td>
+              <td  ui-sref="components.reclamacoes.detail({id: fato.FatoId, status: fato.Status.StatusFatoId})" >{{fato.Empresa.Endereco.Rua}}</td>
+              <td  ui-sref="components.reclamacoes.detail({id: fato.FatoId, status: fato.Status.StatusFatoId})" >{{fato.Alterador.Nome}}</td>
+              <td  ui-sref="components.reclamacoes.detail({id: fato.FatoId, status: fato.Status.StatusFatoId})" >{{fato.ConsumidorEmail}}</td>
             </tr>
           </tbody>
           <tfoot>

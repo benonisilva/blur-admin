@@ -5,14 +5,23 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.components.mail')
+  angular.module('BlurAdmin.pages.components')
     .controller('MailListCtrl', MailListCtrl);
 
   /** @ngInject */
-  function MailListCtrl($stateParams,mailMessages) {
+  function MailListCtrl(fatos) {
+    console.log("MailListCtrl:fatos");
     var vm = this;
-    vm.messages = mailMessages.getMessagesByLabel($stateParams.label);
-    vm.label = $stateParams.label;
+    vm.localFatos = [];
+    vm.tipo = "";
+    init();
+    
+    function init () {
+      console.log("MailListCtrl:init");
+      var fatosData = fatos.data.fatos;
+      vm.fatos = fatosData;
+      return vm;
+    }
   }
 
 })();

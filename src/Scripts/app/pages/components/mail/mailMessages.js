@@ -5,11 +5,12 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.components.mail')
+  angular.module('BlurAdmin.pages.components')
     .service('mailMessages', mailMessages);
 
   /** @ngInject */
-  function mailMessages($sce) {
+  function mailMessages($sce,statusListService,fatosService) {
+    
     var messages = [
       {
         "id": "4563faass",
@@ -207,41 +208,30 @@
         if (a.date < b.date) return -1;
       }).reverse();
     
-    var tabs = [{
-      label: 'inbox',
-      name: 'Novas',
-      newMails: 7
-    }, {
-      label: 'sent',
-      name: 'Arquivadas'
-    }, {
-      label: 'important',
-      name: 'Revistas'
-    }, {
-      label: 'draft',
-      name: 'Improcedentes',
-      newMails: 2
-    }, {
-      label: 'spam',
-      name: 'Spam'
-    }, {
-      label: 'trash',
-      name: 'Deletadas'
-    }];
+    var tabs = [];
+    var tabs2 = [];
+    var promise = function (id) {
+      return statusListService.getStatus(id).then( function(data) {
+          console.log(data);
+          tabs = data.data.lista;
+          return tabs;
+        });
+    
+    }
 
     return{
       getTabs : function(){
         return tabs
       },
-      getMessagesByLabel : function(label){
-        return messages.filter(function(m){
-          return m.labels.indexOf(label) != -1;
-        });
+      promise : promise,
+      
+      getMessagesByLabel : function(statusId,tipoId){
+        console.log("getMessagesByLabel")
+        return fatosService.getByStatus(statusId,tipoId);
       },
       getMessageById : function(id){
-        return messages.filter(function(m){
-          return m.id == id;
-        })[0];
+       console.log("getMessagesByLabel")
+       return fatosService.getFatoById(id);
       }
     }
 

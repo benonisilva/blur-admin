@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.fatos')
+  angular.module('BlurAdmin.pages.shared.forms')
     .factory('fatosService', fatosService);
 
   /** @ngInject */

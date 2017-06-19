@@ -5,24 +5,18 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.components.mail')
+  angular.module('BlurAdmin.pages.components')
       .controller('MailTabCtrl', MailTabCtrl);
 
   /** @ngInject */
-  function MailTabCtrl(composeModal, mailMessages) {
+  function MailTabCtrl(mailMessages) {
 
-    var vm = this;
-    vm.navigationCollapsed = true;
+    console.log("MailTabCtrl:dados");
+  
+    var tabCtrl = this;
+    tabCtrl.navigationCollapsed = true;
+    tabCtrl.tabs = mailMessages.getTabs();
     
-    vm.showCompose = function(subject, to , text){
-      composeModal.open({
-        subject : subject,
-        to: to,
-        text: text
-      })
-    };
-
-    vm.tabs = mailMessages.getTabs();
   }
 
 })();

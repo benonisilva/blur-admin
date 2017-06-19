@@ -15,9 +15,10 @@
     // 'BlurAdmin.pages.charts',
     // 'BlurAdmin.pages.maps',
     // 'BlurAdmin.pages.profile',
-    'BlurAdmin.pages.agentes',
+    
     'BlurAdmin.pages.autos',
-    'BlurAdmin.pages.fatos',
+    'BlurAdmin.pages.agentes',
+    // 'BlurAdmin.pages.fatos',
     
   ];
   angular.module('BlurAdmin.pages',routes)

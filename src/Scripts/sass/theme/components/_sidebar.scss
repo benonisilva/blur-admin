@@ -254,7 +254,7 @@ a.al-sidebar-list-link {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
   .menu-collapsed {
     @include layout-collapsed();
   }

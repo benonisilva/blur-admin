@@ -15,7 +15,7 @@
     // 'BlurAdmin.pages.charts',
     // 'BlurAdmin.pages.maps',
     // 'BlurAdmin.pages.profile',
-    'BlurAdmin.pages.fatos',
+    // 'BlurAdmin.pages.fatos',
     'BlurAdmin.pages.autos',
     'BlurAdmin.pages.agentes',
     

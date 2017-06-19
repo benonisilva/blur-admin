@@ -7,7 +7,7 @@
             <span class="labels-title">Situações</span> 
           </div>
           <div ng-repeat="t in tabCtrl.tabs" ui-sref-active="active" class="mail-navigation"
-               ui-sref="components.mail.label({status: t.StatusFatoId})" ng-click="selectTab(t.StatusFatoId)">
+               ui-sref="components.reclamacoes.label({status: t.StatusFatoId})" ng-click="selectTab(t.StatusFatoId)">
             {{t.Nome}} <span class="new-mails" ng-show="t.Quantidade">{{t.Quantidade}}</span>
           </div>
         </div>

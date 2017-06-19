@@ -5,37 +5,37 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.components.mail', ['BlurAdmin.pages.shared.forms'])
+  angular.module('BlurAdmin.pages.components.reclamacoes', ['BlurAdmin.pages.shared.forms'])
     .config(routeConfig);
 
   /** @ngInject */
   function routeConfig($stateProvider,$urlRouterProvider) {
     $stateProvider
-        .state('components.mail', {
-          url: '/mail',
+        .state('components.reclamacoes', {
+          url: '/reclamacoes',
           abstract: true,
-          templateUrl: 'Scripts/app/pages/components/mail/mail.html',
+          templateUrl: 'Scripts/app/pages/components/mail/reclamacoes.html',
           controller: "MailTabCtrl",
           controllerAs: "tabCtrl",
-          title: 'Denúncias',
+          title: 'Reclamações',
           resolve : { dados : function (mailMessages) {
-              return mailMessages.promise(1);
+              return mailMessages.promise(2);
            } 
           },
           
           sidebarMeta: {
-            order: 0,
+            order: 100,
           },
-        }).state('components.mail.label', {
+        }).state('components.reclamacoes.label', {
           url: '/:status',
-          templateUrl: 'Scripts/app/pages/components/mail/list/mailList.html',
-          title: 'Denúncias',
+          templateUrl: 'Scripts/app/pages/components/mail/list/reclamacoesList.html',
+          title: 'Situação',
           controller: "MailListCtrl",
           controllerAs: "vm",
           resolve : { fatos : function ($stateParams,mailMessages){
-            return mailMessages.getMessagesByLabel($stateParams.status,1);
+            return mailMessages.getMessagesByLabel($stateParams.status,2);
           }}
-        }).state('components.mail.detail', {
+        }).state('components.reclamacoes.detail', {
           url: '/:status/:id',
           templateUrl: 'Scripts/app/pages/components/mail/detail/mailDetail.html',
           title: 'Detalhes',
@@ -50,7 +50,7 @@
             // }
           }
         });
-    $urlRouterProvider.when('/components/mail','/components/mail/1');
+    $urlRouterProvider.when('/components/reclamacoes','/components/reclamacoes/1');
   }
 
 })();

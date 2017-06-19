@@ -17,8 +17,8 @@
           abstract: true,
           title: 'Agentes',
           sidebarMeta: {
-            icon: 'ion-document',
-            order: 250,
+            icon: 'ion-person-stalker',
+            order: 2500,
           },
         })
         .state('agentes.list', {
@@ -28,7 +28,7 @@
           controllerAs : 'vm',
           title: 'Agentes',
           sidebarMeta: {
-            order: 0,
+            order: 2000,
           },
           resolve : {
             agentes : function(AgenteService){
@@ -44,7 +44,7 @@
           controllerAs: 'vm',
           title: 'Adiciona Agente',
           sidebarMeta: {
-            order: 200,
+            order: 20000,
           },
         });
   }

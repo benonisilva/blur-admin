@@ -6,14 +6,14 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.shared.forms')
-    .service('statusFatosService', statusFatosService);
+    .service('statusListService', statusListService);
 
   /** @ngInject */
-  function statusFatosService($http) {
+  function statusListService($http) {
   
     return {
-      getStatus : function () {
-				return $http.get("/Status/Listar");
+      getStatus : function (tipoId) {
+        return $http.get("/Status/Listar?tipoId="+tipoId,  { cache: false} );
         
       }
     }
