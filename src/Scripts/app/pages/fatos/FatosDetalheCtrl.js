@@ -26,7 +26,7 @@
 
     vm.showAveriguarArea = function (fato) {
       var nome = fato.Status.Nome;
-      console.log(nome);
+      
       //mudar para array de status q nao mostra e filtrar.
       return   !(nome === "Averiguando" || 
                nome === "Constatada" ||
@@ -36,10 +36,22 @@
 
     function init () {
       var fatoView = fato.data.fato;
+      var statusLista = status.data.lista;
       vm.fato = fatoView;
       vm.fato.Data = new Date(fatoView.Data);
-      vm.status = status.data.lista;
+
+      var retVal = statusLista.filter(filterStatus);
+      vm.status = retVal;
       return vm;
+    }
+
+    //nao pode alterar para esses status pois isso se da automaticamente.
+    function filterStatus(fato){
+      var nome = fato.Status.Nome;
+      console.log(nome);
+      return   !(nome === "Averiguando" || 
+               nome === "Constatada" ||
+               nome === "Não Constatada");
     }
 
   	vm.alterarStatus = function(id,novo){

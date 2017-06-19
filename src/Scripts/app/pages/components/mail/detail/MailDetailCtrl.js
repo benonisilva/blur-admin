@@ -43,8 +43,17 @@
       vm.fato = fatoView;
       vm.hasFinaliza = showAveriguarArea(fatoView);
       vm.fato.Data = new Date(fatoView.Data);
-      vm.status = mailMessages.getTabs();
+      vm.status = mailMessages.getTabs().filter(filterStatus);
       return vm;
+    }
+
+     //nao pode alterar para esses status pois isso se da automaticamente.
+    function filterStatus(fato){
+      var nome = fato.Nome;
+      console.log(nome);
+      return   !(nome === "Averiguando" || 
+               nome === "Constatada" ||
+               nome === "Não Constatada");
     }
 
   	vm.alterarStatus = function(id,novo){

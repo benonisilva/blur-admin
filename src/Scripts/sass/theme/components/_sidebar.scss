@@ -266,11 +266,11 @@ a.al-sidebar-list-link {
   }
 }
 
-@media (max-width: 1200px) and (min-width: $resXS) {
+@media (max-width: 1000px) and (min-width: $resXS) {
   @include layout-collapsed();
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
   @include sidebar-overlap();
 }
 
