@@ -48,6 +48,9 @@
             autos : function(autoConstatacaoService){
               console.log("resolve:autos.constatacao")
               return autoConstatacaoService.getAutos()
+            }, 
+            agentes : function(autoConstatacaoService) {
+              return autoConstatacaoService.getAgentes()
             }
           }
         })
@@ -65,6 +68,9 @@
             autos : function(autoConstatacaoService){
               console.log("resolve:autos.autosfinalizados")
               return autoConstatacaoService.getAutosFinalizados()
+            }, 
+            agentes : function(autoConstatacaoService) {
+              return autoConstatacaoService.getAgentes()
             }
           }
         })

@@ -13,7 +13,7 @@
     return {
       restrict: 'E',
       templateUrl: 'Scripts/app/theme/components/msgCenter/msgCenter.html',
-      controller: 'MsgCenterCtrl'
+      controller: 'MsgCenterCtrl as vm'
     };
   }
 

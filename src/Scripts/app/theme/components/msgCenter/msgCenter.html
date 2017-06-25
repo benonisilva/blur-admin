@@ -30,20 +30,19 @@
   </li>-->
   <li uib-dropdown>
     <a href class="msg" uib-dropdown-toggle>
-      <i class="fa fa-bell-o"></i><span>5</span>
+      <i class="fa fa-bell-o"></i><span>{{vm.messages.length}}</span>
       <div class="notification-ring"></div>
     </a>
     <div uib-dropdown-menu class="top-dropdown-menu">
       <i class="dropdown-arr"></i>
       <div class="header clearfix">
-        <strong>Denúncias</strong>
-        <a href>Marcar Todas Como Lidas</a>
+        <strong>Denúncias Recebidas</strong>
       </div>
       <div class="msg-list">
-        <a href class="clearfix" ng-repeat="msg in messages">
+        <a href class="clearfix" ng-repeat="msg in vm.messages">
           <div class="msg-area">
-            <div>{{ msg.text }}</div>
-            <span>{{ msg.time }}</span>
+            <div>{{ msg.Empresa.NomeFantasia }}</div>
+            <span>{{ msg.Data }}</span>
           </div>
         </a>
       </div>

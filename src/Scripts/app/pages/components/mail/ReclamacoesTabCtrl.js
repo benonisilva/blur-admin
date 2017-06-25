@@ -9,13 +9,14 @@
       .controller('ReclamacoesTabCtrl', ReclamacoesTabCtrl);
 
   /** @ngInject */
-  function ReclamacoesTabCtrl(status) {
+  function ReclamacoesTabCtrl(status,$scope) {
 
     console.log("ReclamacoesCtrl:dados");
   
     var tabCtrl = this;
     tabCtrl.navigationCollapsed = true;
     tabCtrl.tabs = [];
+    console.log($scope);
     init();
     console.log(tabCtrl)
     function init () {

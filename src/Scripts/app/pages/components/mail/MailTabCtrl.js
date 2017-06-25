@@ -9,7 +9,7 @@
       .controller('MailTabCtrl', MailTabCtrl);
 
   /** @ngInject */
-  function MailTabCtrl(mailMessages) {
+  function MailTabCtrl(mailMessages,$rootScope) {
 
     console.log("MailTabCtrl:dados");
   

@@ -9,7 +9,7 @@
     .controller('FinalizarDenunciaCtrl', FinalizarDenunciaCtrl);
 
   /** @ngInject */
-  function FinalizarDenunciaCtrl(ConstatacaoId,autoConstatacaoService,toastr) {
+  function FinalizarDenunciaCtrl(ConstatacaoId,autoConstatacaoService,toastr,$state) {
     
    console.log("FinalizarDenunciaCtrl:init:" + ConstatacaoId);
    var vm = this;
@@ -33,6 +33,7 @@
       autoConstatacaoService.setFinaliza(dados).then(function (dados){
         toastr.success("Denúncia Finalizada!");
         console.log(dados);
+        $state.go("autos.constatacao");
       });
 
    }

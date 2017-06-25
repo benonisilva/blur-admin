@@ -9,7 +9,7 @@
     .controller('AutoConstatacaoListaCtrl', AutoConstatacaoListaCtrl);
 
   /** @ngInject */
-  function AutoConstatacaoListaCtrl(autos,apiConfig,removerModalsService) {
+  function AutoConstatacaoListaCtrl(autos,apiConfig,removerModalsService,agentes) {
     
    console.log("AutoConstatacaoListaCtrl:init");
 
@@ -36,7 +36,8 @@
           element.Prazo = retDate;
           vm.autos.push(element);
       }, this);
-      return vm.autos;
+      vm.agentes = agentes.data.agentes;
+      return vm;
    }
 
   }

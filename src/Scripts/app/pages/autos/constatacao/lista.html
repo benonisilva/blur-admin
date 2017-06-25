@@ -5,18 +5,23 @@
     <tr class="sortable ">
       <th class="table-id" st-sort="id" st-sort-default="true">#</th>
       <th st-sort="Empresa.NomeFantasia">Empresa</th>
-      <th st-sort="agente">Agente</th>
-      <th st-sort="username">Data Criação</th>
-       <th st-sort="username">Data Diligência</th>
-        <th st-sort="username">Data Conclusão</th>
-        <th st-sort="username">Status</th>
+      <th st-sort="Agente.Nome">Agente</th>
+      <th st-sort="DataAutuacao">Data Criação</th>
+      <th st-sort="DataConclusao">Data Diligência</th>
+      <th st-sort="DataEntrega">Data Conclusão</th>
+      <th st-sort="Status.Nome">Status</th>
     </tr>
     <tr>
       <th></th>
       <th><input st-search="Empresa.NomeFantasia" placeholder="por nome" class="input-sm form-control search-input"
-                 type="search"/></th>
-      <th><input st-search="agente" placeholder="pesquisa por nome" class="input-sm form-control search-input"
-                 type="search"/></th>
+                 type="search"/>
+      </th>
+      <th>
+        <select st-search="Agente.Nome" class="form-control" id="predicate">
+          <option value="">Todos</option>
+          <option ng-repeat="agente in vm.agentes" value="{{agente.Nome}}">{{agente.Nome}}</option>
+        </select>
+      </th>
     </tr>
     </thead>
     <tbody>

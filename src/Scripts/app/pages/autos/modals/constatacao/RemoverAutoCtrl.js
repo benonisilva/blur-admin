@@ -9,7 +9,7 @@
     .controller('RemoverAutoCtrl', RemoverAutoCtrl);
 
   /** @ngInject */
-  function RemoverAutoCtrl(auto,autoConstatacaoService,$uibModalInstance,toastr) {
+  function RemoverAutoCtrl(auto,autoConstatacaoService,$uibModalInstance,toastr,$state) {
     var vm = this;
     vm.auto = auto;
     vm.loading = false;
@@ -23,15 +23,18 @@
           
     		  $uibModalInstance.close('ok');
           toastr.success("Removido!");
+          $state.go("autos.constatacao");
         }else if(result.data.msg==="contem_auto"){
     
     		  $uibModalInstance.close('ok');
           toastr.error("Contem uma Denúncia Associada. Não pode ser removido!");
+          $state.go("autos.constatacao");
         }
     		
     	},function(err){
     		$uibModalInstance.close('ok');
         toastr.error(err);
+        $state.go("autos.constatacao");
     	})
     }
   }

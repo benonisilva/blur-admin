@@ -9,7 +9,7 @@
     .controller('AutosFinalizadosListaCtrl', AutosFinalizadosListaCtrl);
 
   /** @ngInject */
-  function AutosFinalizadosListaCtrl(autos) {
+  function AutosFinalizadosListaCtrl(autos,agentes) {
     
    console.log("AutosFinalizadosListaCtrl:init");
 
@@ -36,7 +36,8 @@
           element.Prazo = retDate;
           vm.autos.push(element);
       }, this);
-      return vm.autos;
+      vm.agentes = agentes.data.agentes;
+      return vm;
    }
 
   }
