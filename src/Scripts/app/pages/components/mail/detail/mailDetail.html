@@ -122,11 +122,13 @@
                                 <div class="col-md-12">
                                      <button type="submit" class="btn btn-success" ng-click="vm.alterarStatus(vm.fato.FatoId,vm.fato.Status)">Alterar Situação</button>
                                 </div>
-                                <div class="col-md-4 col-md-offset-8">
+                                <div class="col-md-8 col-md-offset-4">
                                     <div class="form-group has-feedback"
                                          ng-class="{'has-error': vm.addressForm.address.$invalid && (vm.addressForm.address.$dirty || vm.addressForm.$submitted)}">
-                                        <label for="productName">Data</label>
-                                        <input type="date" class="form-control" id="address" name="dtData" placeholder="Data do Fato" ng-model="vm.fato.Data" >
+                                        <label for="productName">Data do Ocorrido</label>
+                                        <input type="date" class="form-control" id="address" name="dtDataOcorrido" placeholder="Data do Fato" ng-model="vm.fato.Data" >
+                                        <label for="productName">Data do Envio</label>
+                                        <input type="date" class="form-control" id="da" name="dtDataEnvio" placeholder="Data do Fato" ng-model="vm.fato.DataEnvio" >
                                         <!--<span class="help-block error-block basic-block">Campo Requerido</span>-->
                                     </div>
                                 </div>

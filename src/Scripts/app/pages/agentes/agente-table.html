@@ -13,7 +13,8 @@
         <td>{{agente.Matricula}}</td>
         <td>
             <div class="buttons">
-                <button ng-click="vm.deletar(agente.AgenteId)" class="btn btn-primary">Deletar</button>
+                 <a ui-sref="agentes.editar({id:agente.AgenteId})" class="btn btn-primary">Perfil</a>
+                 <a ui-sref="agentes.horario({id:agente.AgenteId})" class="btn btn-primary">Horário</a>
             </div>
         </td>
     </tr>

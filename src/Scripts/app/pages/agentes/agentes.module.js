@@ -46,6 +46,19 @@
           sidebarMeta: {
             order: 20000,
           },
-        });
+        }).state('agentes.editar',
+        {
+          url: '/editar/:id',
+          templateUrl: 'Scripts/app/pages/agentes/editar-agente.html',
+          controller: 'EditarAgenteCtrl',
+          controllerAs: 'vm',
+          title: 'Editar Agente',
+          resolve : {
+            agente : function($stateParams,AgenteService){
+              return AgenteService.getById($stateParams.id);
+            }
+          }
+        })
+        ;
   }
 })();

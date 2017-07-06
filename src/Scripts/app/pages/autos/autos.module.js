@@ -15,7 +15,7 @@
           url: '/autos',
           template : '<ui-view></ui-view>',
           abstract: true,
-          title: 'Formulários',
+          title: 'Diligências',
           sidebarMeta: {
             icon: 'ion-document',
             order: 250,
@@ -27,7 +27,7 @@
           templateUrl: 'Scripts/app/pages/autos/constatacao/finalizar.html',
           controller : 'FinalizarDenunciaCtrl',
           controllerAs : 'vm',
-          title: 'Finalizar Denúncia',
+          title: 'Finalizar Diligência',
           resolve : {
             ConstatacaoId : function($stateParams){
               return $stateParams.id
@@ -40,7 +40,7 @@
           templateUrl: 'Scripts/app/pages/autos/constatacao/lista.html',
           controller : 'AutoConstatacaoListaCtrl',
           controllerAs : 'vm',
-          title: 'Formulários de Averiguação',
+          title: 'Em Análise',
           sidebarMeta: {
             order: 0,
           },
@@ -60,7 +60,7 @@
           templateUrl: 'Scripts/app/pages/autos/constatacao/lista-finalizados.html',
           controller : 'AutosFinalizadosListaCtrl',
           controllerAs : 'vm',
-          title: 'Constatações Finalizadas',
+          title: 'Concluidas',
           sidebarMeta: {
             order: 100,
           },
@@ -81,7 +81,7 @@
           templateUrl: 'Scripts/app/pages/autos/constatacao/constatacao.form.html',
           controller: 'AutoConstatacaoCriarCtrl',
           controllerAs: 'vm',
-          title: 'Criar Formulário de Averiguação',
+          title: 'Criar Diligência',
           resolve : {
             fato : function($stateParams,autoConstatacaoService){
               return autoConstatacaoService.getFatoById($stateParams.fatoId)

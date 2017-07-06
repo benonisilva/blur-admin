@@ -16,7 +16,7 @@
           return $http.get(apiConfig.url+"Agente/Listar/")
       },
       getById : function(id){
-      	return $http.get(apiConfig.url+"Agente/"+id)
+      	return $http.get(apiConfig.url+"Agente?id="+id)
       },
       save : function(agente){
       	console.log(agente);

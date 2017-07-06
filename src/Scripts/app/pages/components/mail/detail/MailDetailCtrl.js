@@ -43,8 +43,10 @@
       vm.fato = fatoView;
       vm.hasFinaliza = showAveriguarArea(fatoView);
       var dataStringSplit = fatoView.Data.split('/');
-
+      
       vm.fato.Data = new Date(dataStringSplit[2], dataStringSplit[1]-1, dataStringSplit[0] );
+      dataStringSplit = fatoView.DataEnvio.split('/');
+      vm.fato.DataEnvio = new Date(dataStringSplit[2], dataStringSplit[1]-1, dataStringSplit[0] );
       vm.status = mailMessages.getTabs().filter(filterStatus);
       return vm;
     }
