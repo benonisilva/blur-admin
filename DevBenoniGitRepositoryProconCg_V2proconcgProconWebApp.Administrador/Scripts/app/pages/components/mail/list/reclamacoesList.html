@@ -1,0 +1,56 @@
+
+<div class="side-message-navigation" ng-class="{'expanded': tabCtrl.navigationCollapsed}">
+  <div class="mail-messages-control side-message-navigation-item">
+    <div class="toggle-navigation-container">
+      <a href class="collapse-navigation-link ion-navicon"
+         ng-click="tabCtrl.navigationCollapsed=!tabCtrl.navigationCollapsed"></a>
+    </div>
+    
+  </div>
+  <div ba-panel ba-panel-title="Reclamações" ba-panel-class="with-scroll" >
+    <div class="widgets">
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table" st-table="vm.localFatos" st-safe-src="vm.fatos" >
+          <thead>
+            <tr class="sortable">
+              <th class="table-id" st-sort="id" st-sort-default="true">#</th>
+              <th st-sort="Empresa.NomeFantasia">Nome Empresa</th>
+              <th st-sort="Empresa.Endereco.Rua">Rua</th>
+              <th st-sort="Alterador.Matricula">Agente</th>
+              <th st-sort="ConsumidorEmail">Consumidor Email</th>
+            </tr>
+            <tr>
+              <th></th>
+              <th><input st-search="Empresa.NomeFantasia" placeholder="Nome Empresa" class="input-sm form-control search-input"
+                          type="search"/></th>
+              <th><input st-search="Empresa.Endereco.Rua" placeholder="Rua" class="input-sm form-control search-input"
+                          type="search"/></th>
+                          <th><input st-search="Alterador.Nome" placeholder="Nome" class="input-sm form-control search-input"
+                          type="search"/></th>
+              <th><input st-search="ConsumidorEmail" placeholder="Consumidor Email" class="input-sm form-control search-input" type="search"/>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="side-message-navigation-item little-human shineHover" ng-repeat="fato in vm.localFatos track by $index">
+              <td class="table-id">{{fato.FatoId}}</td>
+              <td ui-sref="components.reclamacoes.detail({id: fato.FatoId, status: fato.Status.StatusFatoId})" >{{fato.Empresa.NomeFantasia}}</td>
+              <td  ui-sref="components.reclamacoes.detail({id: fato.FatoId, status: fato.Status.StatusFatoId})" >{{fato.Empresa.Endereco.Rua}}</td>
+              <td  ui-sref="components.reclamacoes.detail({id: fato.FatoId, status: fato.Status.StatusFatoId})" >{{fato.Alterador.Nome}}</td>
+              <td  ui-sref="components.reclamacoes.detail({id: fato.FatoId, status: fato.Status.StatusFatoId})" >{{fato.ConsumidorEmail}}</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="5" class="text-center">
+                <div st-pagination="" st-items-by-page="7" st-displayed-pages="5"></div>
+              </td>
+            </tr>
+          </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

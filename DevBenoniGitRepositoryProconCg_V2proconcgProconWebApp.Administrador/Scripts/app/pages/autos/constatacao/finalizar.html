@@ -1,0 +1,41 @@
+<div class="widgets">
+    <div class="row">
+        <div class="col-md-12">
+            <div ba-panel ba-panel-title="Finalizar Diligência" ba-panel-class="with-scroll">
+                 <form name="vm.finalizarForm" novalidate> 
+                     <div class="row"> 
+                        <div class="col-md-12">
+                            <div class="form-group" >
+                                <label for="productId">Mensagem</label>
+                                <input type="text" class="form-control" id="statusMsg" name="statusMsg" placeholder="Mensagem para o Consumidor" ng-model="vm.form.Mensagem">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                                    <div class="form-group">
+                                       <label for="productName">Situação</label>
+                                       <select class="form-control" title="Situação"
+                                               ng-model="vm.form.Status"
+                                               ng-options="status as status.Nome for status in vm.status">
+                                       </select>
+                                    </div>
+                                </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group has-feedback">
+                            <label for="productName">Data da Diligência</label>
+                            <input type="date" class="form-control" id="dtDiligencia" name="address" placeholder="Data da Diligência" ng-model="vm.form.DataEntrega" >
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group has-feedback">
+                            <label for="productName">Data da Conclusão</label>
+                            <input type="date" class="form-control" id="dtConclusao" name="address" placeholder="Data da Conclusão" ng-model="vm.form.DataConclusao" >
+                        </div>
+                    </div>
+                    </div>
+                     <button type="submit" class="btn btn-success" ng-click="vm.finaliza(vm.form)">Finalizar</button>    
+                 </form>
+            </div>
+        </div>
+    </div>
+</div>

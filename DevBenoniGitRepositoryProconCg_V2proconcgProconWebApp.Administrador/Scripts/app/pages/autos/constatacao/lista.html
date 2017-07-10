@@ -1,0 +1,54 @@
+<div class="widgets">
+  <div ba-panel ba-panel-title="Diligências" ba-panel-class="with-scroll">
+  <table class="table" st-table="vm.autos">
+    <thead>
+    <tr class="sortable ">
+      <th class="table-id" st-sort="id" st-sort-default="true">#</th>
+      <th st-sort="Empresa.NomeFantasia">Empresa</th>
+      <th st-sort="Agente.Nome">Agente</th>
+      <th st-sort="DataAutuacao">Data da Denúncia</th>
+      <th st-sort="DataEntrega">Data Diligência</th>
+      <th st-sort="DataConclusao">Data Conclusão</th>
+      <th st-sort="Status.Nome">Status</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th><input st-search="Empresa.NomeFantasia" placeholder="por nome" class="input-sm form-control search-input"
+                 type="search"/>
+      </th>
+      <th>
+        <select st-search="Agente.Nome" class="form-control" id="predicate">
+          <option value="">Todos</option>
+          <option ng-repeat="agente in vm.agentes" value="{{agente.Nome}}">{{agente.Nome}}</option>
+        </select>
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="auto in vm.autos">
+      <td class="table-id">{{auto.AutoConstatacaoId}}</td>
+      <td>{{auto.Empresa.NomeFantasia}}</td>
+      <td>{{auto.Agente.Nome}}</td>
+      <td>{{auto.DataAutuacao.slice(6,19) | date : 'dd/MM/yy'}}</td>
+      <td>{{auto.DataEntrega.slice(6,19) | date : 'dd/MM/yy'}}</td>
+      <td>{{auto.DataConclusao.slice(6,19) | date : 'dd/MM/yy'}}</td>
+      <td>{{auto.Status.Nome}}</td>
+      <td>
+        <div class="buttons">
+          <button class="btn btn-primary editable-table-button btn-xs" ui-sref="autos.constatacaoForm({empresaId: auto.Empresa.EmpresaId, autoId: auto.AutoConstatacaoId})">Editar</button>
+          <button class="btn btn-primary editable-table-button btn-xs" ui-sref="autos.finalizar({id: auto.AutoConstatacaoId})">Finalizar</button>
+          <a type="button"  href="{{vm.url}}Auto/GerarAuto/{{auto.AutoConstatacaoId}}"  target="_blank" class="btn btn-with-icon"><i class="ion-printer"></i>Gerar Doc.</a>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="6" class="text-center">
+        <div st-pagination="" st-items-by-page="5" st-displayed-pages="5"></div>
+      </td>
+    </tr>
+    </tfoot>
+  </table>
+  </div>
+</div>

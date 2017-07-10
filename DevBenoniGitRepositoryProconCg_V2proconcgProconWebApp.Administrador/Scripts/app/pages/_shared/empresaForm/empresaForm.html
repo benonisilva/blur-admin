@@ -1,0 +1,38 @@
+<ba-wizard-step title="Empresa" form="vm.empresaForm">
+    <form name="vm.empresaForm" novalidate>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group has-feedback"
+                        ng-class="{'has-error': vm.empresaForm.NomeFantasia.$invalid && (vm.empresaForm.NomeFantasia.$dirty || vm.empresaForm.$submitted)}">
+                    <label for="NomeFantasia">Nome Fantasia</label>
+                    <input type="text" class="form-control" id="NomeFantasia" name="NomeFantasia" placeholder="Nome Fantasia" data-ng-model="vm.empresaData.NomeFantasia" >
+                    <span class="help-block error-block basic-block"></span>
+                </div>
+                <div class="form-group" ng-class="{'has-error': vm.empresaForm.RazaoSocial.$invalid && (vm.empresaForm.RazaoSocial.$dirty || vm.empresaForm.$submitted)}">
+                    <label for="RazaoSocial">Razão Social</label>
+                    <input type="text" class="form-control" id="RazaoSocial" name="RazaoSocial" placeholder="Razão Social" data-ng-model="vm.empresaData.RazaoSocial" >
+                    <span class="help-block error-block basic-block"></span>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group" ng-class="{'has-error': vm.empresaForm.Atividade.$invalid && (vm.empresaForm.Atividade.$dirty || vm.empresaForm.$submitted)}">
+                    <label for="Atividade">Atividade</label>
+                    <input type="text" class="form-control" id="Atividade" name="Atividade" placeholder="Atividade" data-ng-model="vm.empresaData.Atividade" >
+                    <span class="help-block error-block basic-block"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group" ng-class="{'has-error': vm.empresaForm.InscricaoEstadual.$invalid && (vm.empresaForm.InscricaoEstadual.$dirty || vm.empresaForm.$submitted)}">
+                    <label for="InscricaoEstadual">Inscrição Estadual</label>
+                    <input type="text" class="form-control" id="InscricaoEstadual" name="InscricaoEstadual" placeholder="Inscrição Estadual" data-ng-model="vm.empresaData.InscricaoEstadual" >
+                    <span class="help-block error-block basic-block"></span>
+                </div>
+                <div class="form-group" ng-class="{'has-error': !vm.CnpjIsValid() && (vm.empresaForm.CNPJ.$dirty || vm.empresaForm.$submitted)}">
+                    <label for="CNPJ">CNPJ</label>
+                    <input type="text" class="form-control" placeholder="CNPJ" data-ng-model="vm.empresaData.Cnpj" name="CNPJ" ui-br-cnpj-mask>
+                    <!--<span class="help-block error-block basic-block">Invalido</span>-->
+                </div>
+            </div>
+        </div>
+    </form>
+</ba-wizard-step>

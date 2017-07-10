@@ -1,0 +1,65 @@
+<div class="widgets">
+    <div class="row">
+        <div class="col-md-12">
+            <div ba-panel ba-panel-title="Denúncias" ba-panel-class="with-scroll">
+                  <table class="table" st-table="vm.fatos">
+    <thead>
+    <tr class="sortable">
+      <th class="table-id" st-sort="id" st-sort-default="true">#</th>
+      <th st-sort="Empresa.NomeFantasia">Nome Empresa</th>
+      <th st-sort="Empresa.Endereco.Rua">Rua</th>
+      <th st-sort="Alterador.Matricula">Agente</th>
+      <th st-sort="ConsumidorEmail">Consumidor Email</th>
+      <th ng-if="!vm.isAveriguando" st-sort="Status.Nome">Status</th>
+      
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th><input st-search="Empresa.NomeFantasia" placeholder="Nome Empresa" class="input-sm form-control search-input"
+                 type="search"/></th>
+      <th><input st-search="Empresa.Endereco.Rua" placeholder="Rua" class="input-sm form-control search-input"
+                 type="search"/></th>
+                 <th><input st-search="Alterador.Nome" placeholder="Nome" class="input-sm form-control search-input"
+                 type="search"/></th>
+      <th><input st-search="ConsumidorEmail" placeholder="Consumidor Email" class="input-sm form-control search-input" type="search"/>
+      </th>
+      
+      <th ng-if="!vm.isFinalizados && !vm.isAveriguando">
+        <select st-search="Status.Nome" class="form-control" id="predicate">
+          <option value="">Todos</option>
+          <option ng-repeat="status in vm.status" value="{{status.Nome}}">{{status.Nome}}</option>
+        </select>
+      </th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="fato in vm.fatos">
+      <td class="table-id">{{fato.FatoId}}</td>
+      <td>{{fato.Empresa.NomeFantasia}}</td>
+      <td>{{fato.Empresa.Endereco.Rua}}</td>
+      <td>{{fato.Alterador.Nome}}</td>
+      <td>{{fato.ConsumidorEmail}}</td>
+      <td ng-if="!vm.isAveriguando" >{{fato.Status.Nome}}</td>
+      <td>
+        <div class="buttons">
+          <button class="btn btn-primary editable-table-button btn-xs" ui-sref="fatos.detalhes({id:fato.FatoId})">Detalhes</button>
+          <button ng-if="vm.isAveriguando" class="btn btn-primary editable-table-button btn-xs" ui-sref="autos.constatacaoForm({empresaId: fato.Empresa.EmpresaId, autoId: fato.AutoConstatacao.AutoConstatacaoId})">Formulário</button>
+        </div>
+      </td>
+
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="5" class="text-center">
+        <div st-pagination="" st-items-by-page="5" st-displayed-pages="5"></div>
+      </td>
+    </tr>
+    </tfoot>
+  </table>
+            </div>
+        </div>
+    </div>
+</div>                         
