@@ -12,6 +12,9 @@
   function fatosService($q,$http,apiConfig) {
 
      return{
+      getHistoricos : function(idFato){
+        return $http.get(apiConfig.url+"HistoricoFato?fatoId="+idFato)
+      }, 
       getHistorico : function(tipoId){
         return $http.get(apiConfig.url+"Fato/Historico?="+idFato)
       },

@@ -5,12 +5,9 @@
         <a href class="collapse-navigation-link ion-navicon"
            ng-click="tabCtrl.navigationCollapsed=!tabCtrl.navigationCollapsed"></a>
       </div>
-      <!--<button ui-sref="components.mail.label({status : vm.fato.Status.StatusFatoId})"  type="button" class="back-button btn btn-default btn-with-icon"><i
-          class="ion-chevron-left"></i>Voltar
-      </button>-->
     </div>
 
-    <div class="widgets">
+ <div class="widgets">
     <div class="row">
         <div class="col-md-12">
             <div ba-panel ba-panel-title="{{vm.fato.Tipo.Nome}}" ba-panel-class="with-scroll">
@@ -190,11 +187,9 @@
         </div>
     </div>
 
-</div>
-
-
-  </div>
-  <div ng-show="!vm.fato">
-    <h5 ng-class="text-center">Nothing to show</h5>
-  </div>
+    </div>
+    </div>
+    <div ng-show="!vm.fato">
+        <h5 ng-class="text-center">Vazio</h5>
+    </div>
 </div>

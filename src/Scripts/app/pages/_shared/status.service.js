@@ -9,11 +9,11 @@
     .service('statusListService', statusListService);
 
   /** @ngInject */
-  function statusListService($http) {
+  function statusListService($http,apiConfig) {
   
     return {
       getStatus : function (tipoId) {
-        return $http.get("/Status/Listar?tipoId="+tipoId,  { cache: false} );
+        return $http.get(apiConfig.url+"Status/Listar?tipoId="+tipoId,  { cache: false} );
         
       }
     }

@@ -17,7 +17,7 @@ exports.paths = {
   devDist: 'dev-release',
   tmp: '.tmp',
   e2e: 'e2e',
-  aspPath : 'D:\DevBenoni\GitRepository\ProconCg_V2\proconcg\ProconWebApp.Administrador'
+  aspPath : 'D:\\DevBenoni\\GitRepository\\ProconCg_V2\\proconcg\\ProconWebApp.Administrador'
 };
 
 /**

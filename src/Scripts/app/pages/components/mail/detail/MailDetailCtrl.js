@@ -36,10 +36,13 @@
      function showAveriguarArea (fato) {
       var nome = fato.Status.Nome;
       console.log(nome);
+      
       //mudar para array de status q nao mostra e filtrar.
+      
       return   !(nome === "Averiguando" || 
                nome === "Constatada" ||
-               nome === "Não Constatada" || nome === "Trote");
+               nome === "Não Constatada" || nome === "Trote") 
+               || (fato.AutoConstatacao===-1);
 
     };
 

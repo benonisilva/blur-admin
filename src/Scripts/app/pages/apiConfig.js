@@ -7,7 +7,7 @@
   'use strict';
 
   var URL = '/';
-  var apiUrl = 'http://localhost:1119/';
+  var apiUrl = '/procon-mobile/';
 
   angular.module('BlurAdmin.pages')
     .constant('apiConfig', {

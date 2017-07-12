@@ -9,10 +9,10 @@
       .controller('MsgCenterCtrl', MsgCenterCtrl);
 
   /** @ngInject */
-  function MsgCenterCtrl(denunciasMsgService,$interval,$rootScope,$scope) {
+  function MsgCenterCtrl(denunciasMsgService,$interval,$rootScope,$scope,apiConfig) {
     var vm = this;
     vm.messages = [];
-    var audio = new Audio('/Scripts/assets/served.mp3');
+    var audio = new Audio(apiConfig.url+'Scripts/assets/served.mp3');
     init();
 
     

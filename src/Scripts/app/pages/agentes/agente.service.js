@@ -25,8 +25,8 @@
       remove : function(id){
       	return $http.delete(apiConfig.url+"Agente/Deletar/"+id)
       },
-      update : function(agente){
-      	return $http.get(apiConfig.url+"Agente/Update/"+agente)
+      editar : function(agente){
+      	return $http.post(apiConfig.url+"Agente/Editar",agente)
       }
 
     }
