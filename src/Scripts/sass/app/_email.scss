@@ -12,7 +12,7 @@
 .mail-navigation-container {
   float: left;
   position: relative;
-  height: 550px;
+  height: auto;
   transition: width 0.5s;
   color: $default-text;
   width: 200px;
@@ -144,7 +144,7 @@
   float: left;
   padding: 0 15px;
   position: relative;
-  height: 550px;
+  height: auto;
   transition: width 0.5s;
   width: calc(100% - 200px);
   border-bottom-right-radius: 5px;
@@ -185,7 +185,7 @@
 }
 
 .message-container {
-  padding: 15px 15px 10px 15px;
+  //padding: 15px 15px 10px 15px;
   overflow-x: hidden;
 }
 

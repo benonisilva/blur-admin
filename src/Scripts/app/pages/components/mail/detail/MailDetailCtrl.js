@@ -12,7 +12,7 @@
   function MailDetailCtrl(fato,fatosService,mailMessages,toastr) {
     console.log("Init:MailDetailCtrl");
     var vm = this;
-    vm.hasFinaliza = true;
+    vm.hasFinaliza = false;
     init();
     vm.msg = "";
     vm.anexos = [];
@@ -21,7 +21,7 @@
     vm.carregaHistorico = function(id){
       console.log("carregando carregaHistorico...");
       fatosService.getHistoricos(id).then(function(data){
-       vm.historico = JSON.parse(data.data).historico;
+       vm.historico = data.data.historico;
        console.log("historico");
       })
     }
@@ -41,8 +41,8 @@
       
       return   !(nome === "Averiguando" || 
                nome === "Constatada" ||
-               nome === "Não Constatada" || nome === "Trote") 
-               || (fato.AutoConstatacao===-1);
+               nome === "Não Constatada" || nome === "Trote" 
+               || fato.AutoConstatacao.AutoConstatacaoId<=0 )
 
     };
 

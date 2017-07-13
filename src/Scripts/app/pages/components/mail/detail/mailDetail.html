@@ -140,14 +140,28 @@
                     </ba-wizard-step>
                     <ba-wizard-step title="Histórico">
                         <button  class="btn btn-success with-line text-center btn-with-icon" ng-click="vm.carregaHistorico(vm.fato.FatoId)">Carregar</button>
-                        <div class="row" ng-repeat="h in vm.historico">
-                            <div class="col-md-6" >
-                                Data : {{h.DataUltimaAlteracao}}
-                            </div>
-                            <div class="col-md-6" >
-                                Mensagem : {{h.Mensagem}}
-                            </div>
-                        </div>    
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td style="text-align:left;">
+                                        Data
+                                    </td>
+                                    <td>
+                                        Mensagem
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="h in vm.historico">
+                                    <td style="text-align:left;">
+                                        {{h.DataUltimaAlteracao}}
+                                    </td>
+                                    <td>
+                                        {{h.Mensagem}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </ba-wizard-step> 
                      <ba-wizard-step title="Provas">
                         <button  class="btn btn-success with-line text-center btn-with-icon" ng-click="vm.carregaProvas(vm.fato.FatoId)">Carregar</button>
