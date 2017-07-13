@@ -40,7 +40,7 @@
           templateUrl: 'Scripts/app/pages/autos/constatacao/lista.html',
           controller : 'AutoConstatacaoListaCtrl',
           controllerAs : 'vm',
-          title: 'Em Análise',
+          title: 'Em Andamento',
           sidebarMeta: {
             order: 0,
           },
