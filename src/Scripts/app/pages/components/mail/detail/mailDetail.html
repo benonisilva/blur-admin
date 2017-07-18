@@ -139,7 +139,8 @@
                         </form>
                     </ba-wizard-step>
                     <ba-wizard-step title="Histórico">
-                        <button  class="btn btn-success with-line text-center btn-with-icon" ng-click="vm.carregaHistorico(vm.fato.FatoId)">Carregar</button>
+                       <div ba-panel ba-panel-title="Histórico" ba-panel-class="with-scroll">
+                            <button  class="btn btn-success with-line text-center btn-with-icon" ng-click="vm.carregaHistorico(vm.fato.FatoId)">Carregar</button>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -162,6 +163,7 @@
                                 </tr>
                             </tbody>
                         </table>
+                       </div>
                     </ba-wizard-step> 
                      <ba-wizard-step title="Provas">
                         <button  class="btn btn-success with-line text-center btn-with-icon" ng-click="vm.carregaProvas(vm.fato.FatoId)">Carregar</button>
