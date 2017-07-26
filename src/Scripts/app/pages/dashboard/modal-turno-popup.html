@@ -1,0 +1,19 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+      <em class="ion-ios-close-empty sn-link-close"></em>
+    </button>
+    <h4 class="modal-title" id="confirmaSalvarAuto">Adicionar ao Turno</h4>
+  </div>
+  <div class="modal-body">
+        <ul>
+            <li class="row" ng-repeat="agente in boxCtrl.agentes">
+                <span class="col-md-8">{{agente.Nome}}</span>  <ba-switcher class="col-md-4" switcher-style="primary" switcher-value="vm.switches.s1"></ba-switcher>
+            </li>
+        </ul>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" ng-click="boxCtrl.salvar(boxCtrl.auto)">Salvar</button>
+    <button type="button" class="btn btn-primary" ng-click="$dismiss()">Cancelar</button>
+  </div>
+</div>

@@ -20,7 +20,7 @@
       return init();
     }
 
-    $interval(init,60000);
+    $interval(init,6000000000);
 
 
     function init() {
