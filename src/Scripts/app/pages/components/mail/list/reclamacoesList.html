@@ -17,7 +17,7 @@
               <th class="table-id" st-sort="id" st-sort-default="true">#</th>
               <th st-sort="Empresa.NomeFantasia">Nome Empresa</th>
               <th st-sort="Empresa.Endereco.Rua">Rua</th>
-              <th st-sort="Alterador.Matricula">Agente</th>
+              <th st-sort="AutoConstatacao.Agente.Nome">Agente</th>
               <th st-sort="ConsumidorEmail">Consumidor Email</th>
             </tr>
             <tr>
@@ -26,19 +26,19 @@
                           type="search"/></th>
               <th><input st-search="Empresa.Endereco.Rua" placeholder="Rua" class="input-sm form-control search-input"
                           type="search"/></th>
-                          <th><input st-search="Alterador.Nome" placeholder="Nome" class="input-sm form-control search-input"
+                          <th><input st-search="AutoConstatacao.Agente.Nome" placeholder="Nome" class="input-sm form-control search-input"
                           type="search"/></th>
               <th><input st-search="ConsumidorEmail" placeholder="Consumidor Email" class="input-sm form-control search-input" type="search"/>
               </th>
             </tr>
           </thead>
           <tbody>
-            <tr class="side-message-navigation-item little-human shineHover" ng-repeat="fato in vm.localFatos track by $index">
+            <tr class="side-message-navigation-item little-human shineHover"  ng-repeat="fato in vm.localFatos track by $index">
               <td class="table-id">{{fato.FatoId}}</td>
-              <td ui-sref="components.reclamacoes.detail({id: fato.FatoId, status: fato.Status.StatusFatoId})" >{{fato.Empresa.NomeFantasia}}</td>
-              <td  ui-sref="components.reclamacoes.detail({id: fato.FatoId, status: fato.Status.StatusFatoId})" >{{fato.Empresa.Endereco.Rua}}</td>
-              <td  ui-sref="components.reclamacoes.detail({id: fato.FatoId, status: fato.Status.StatusFatoId})" >{{fato.Alterador.Nome}}</td>
-              <td  ui-sref="components.reclamacoes.detail({id: fato.FatoId, status: fato.Status.StatusFatoId})" >{{fato.ConsumidorEmail}}</td>
+              <td ui-sref="components.mail.detail({id: fato.FatoId, status: fato.Status.StatusFatoId})" >{{fato.Empresa.NomeFantasia}}</td>
+              <td  ui-sref="components.mail.detail({id: fato.FatoId, status: fato.Status.StatusFatoId})" >{{fato.Empresa.Endereco.Rua}}</td>
+              <td  ui-sref="components.mail.detail({id: fato.FatoId, status: fato.Status.StatusFatoId})" >{{fato.AutoConstatacao.Agente.Nome}}</td>
+              <td  ui-sref="components.mail.detail({id: fato.FatoId, status: fato.Status.StatusFatoId})" >{{fato.ConsumidorEmail}}</td>
             </tr>
           </tbody>
           <tfoot>
