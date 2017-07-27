@@ -15,6 +15,7 @@
           url: '/dashboard',
           templateUrl: 'Scripts/app/pages/dashboard/dashboard.html',
           title: 'Inicio',
+          controller : 'DashboardCtrl as vm',
           sidebarMeta: {
             icon: 'ion-android-home',
             order: 0,
