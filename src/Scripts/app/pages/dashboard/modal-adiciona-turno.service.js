@@ -10,7 +10,7 @@
 
   /** @ngInject */
   function adicionaTurnoModalService($uibModal) {
-      this.open = function(auto){
+      this.open = function(intervalo){
         return $uibModal.open({
           animation: false,
           templateUrl: 'Scripts/app/pages/dashboard/modal-turno-popup.html',
@@ -19,36 +19,10 @@
           size : 'lg',
           resolve: {
             agentes: function (turnoService) {
-              return   {
-                  data:
-                  {
-                      data:{
-                          agentes:[
-                              {AgenteId:1,Nome:"José da silva xavier"},
-                              {AgenteId:2,Nome:"Shirleru da silva pereira gosis"}, 
-                              {AgenteId:1,Nome:"primeiro"},
-                              {AgenteId:2,Nome:"segundo"},
-                               {AgenteId:1,Nome:"primeiro"},
-                              {AgenteId:2,Nome:"segundo"},
-                               {AgenteId:1,Nome:"primeiro"},
-                              {AgenteId:2,Nome:"segundo"},
-                               {AgenteId:1,Nome:"primeiro"},
-                              {AgenteId:2,Nome:"segundo"},
-                               {AgenteId:1,Nome:"primeiro"},
-                              {AgenteId:2,Nome:"segundo"},
-                               {AgenteId:1,Nome:"primeiro"},
-                              {AgenteId:2,Nome:"segundo"},
-                               {AgenteId:1,Nome:"primeiro"},
-                              {AgenteId:2,Nome:"segundo"},
-                              {AgenteId:2,Nome:"segundo"},
-                              {AgenteId:2,Nome:"segundo"},
-                              {AgenteId:2,Nome:"segundo"},
-                              {AgenteId:2,Nome:"segundo"},
-                              {AgenteId:2,Nome:"segundo"},
-                            ]
-                    }
-                }
-               }
+              return  turnoService.getAgentes()
+            },
+            intervalo : function (){
+              return intervalo
             }
           }
         });

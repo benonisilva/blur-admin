@@ -15,7 +15,7 @@
       vm.agente = {};
 
       vm.adicionar = function name(agente) {
-          agente.Nome = agente.Nome+" "+agente.sobrenome;
+          agente.Nome = agente.Nome;
           AgenteService.save(agente).then(function (success) {
                if(success.data.success===true){
                  toastr.success('Agente Salvo.');
