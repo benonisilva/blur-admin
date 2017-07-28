@@ -14,6 +14,10 @@
     return{
       getAgentes : function(){
           return $http.get(apiConfig.url+"Agente/Listar/")
+      },
+      addTurno : function (turno) {
+        return $http.post(apiConfig.url+"Turno/Add/",turno)
+        
       }
 
     }

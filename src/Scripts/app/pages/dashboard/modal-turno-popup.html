@@ -8,12 +8,12 @@
   <div class="modal-body">
         <ul>
             <li class="row" ng-repeat="agente in boxCtrl.agentes">
-                <span class="col-md-8">{{agente.Nome}}</span>  <ba-switcher class="col-md-4" switcher-style="primary" switcher-value="vm.switches.s1"></ba-switcher>
+                <span class="col-md-8">{{agente.Nome}}</span>  <ba-switcher class="col-md-4" switcher-style="primary" switcher-value="agente.s1"></ba-switcher>
             </li>
         </ul>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-primary" ng-click="boxCtrl.salvar(boxCtrl.auto)">Salvar</button>
+    <button type="button" class="btn btn-primary" ng-click="boxCtrl.salvar(boxCtrl.agentes)">Salvar</button>
     <button type="button" class="btn btn-primary" ng-click="$dismiss()">Cancelar</button>
   </div>
 </div>

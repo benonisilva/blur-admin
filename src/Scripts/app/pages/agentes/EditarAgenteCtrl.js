@@ -14,7 +14,7 @@
   	var vm = this;
   	vm.agente = agente.data.agente;
     vm.editar = function (editAgente) {
-      editAgente.Nome = editAgente.Nome + " " + editAgente.sobrenome;
+      editAgente.Nome = editAgente.Nome;
       AgenteService.editar(editAgente).then(function (sucess){
           console.log(sucess);
           toastr.success("Perfil Editado");
