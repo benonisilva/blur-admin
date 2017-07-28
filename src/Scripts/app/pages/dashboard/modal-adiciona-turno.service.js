@@ -26,6 +26,21 @@
             }
           }
         });
+      };
+
+      this.openRemove = function (turnoId){
+        return $uibModal.open({
+          animation: false,
+          templateUrl: 'Scripts/app/pages/dashboard/modal-remove-turno.html',
+          controller: 'RemoveTurnoCtrl',
+          controllerAs: 'boxCtrl',
+          size : 'sm',
+          resolve: {
+            turnoId : function (){
+              return turnoId
+            }
+          }
+        });
       }
 
   }

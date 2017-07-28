@@ -25,7 +25,7 @@
         }
         turnoService.addTurno(turno).then(function (data){
           console.log(data);
-          $uibModalInstance.close('ok');
+          $uibModalInstance.close(agentesEscolhidos);
           $state.go('dashboard');
         });
         

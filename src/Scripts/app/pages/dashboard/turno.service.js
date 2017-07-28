@@ -18,6 +18,11 @@
       addTurno : function (turno) {
         return $http.post(apiConfig.url+"Turno/Add/",turno)
         
+      },
+      removeTurno : function (id) {
+        console.log(id)
+        return $http.get(apiConfig.url+"Turno/Remove?TurnoId="+id)
+        
       }
 
     }

@@ -35,25 +35,37 @@
       selectable: true,
       selectHelper: true,
       select: function (start, end) {
-        adicionaTurnoModalService.open({intervalo:{start:start, end:end}});
         var title = "Adicionado"
         var eventData;
-        if (title) {
-          eventData = {
-            title: title,
-            start: start,
-            end: end
-          };
-          $element.fullCalendar('renderEvent', eventData, true); // stick? = true
-        }
+        adicionaTurnoModalService.open({intervalo:{start:start, end:end}})
+         .result.then(function (modalreturn){
+            title = modalreturn.map(function (agente){
+              return agente.Nome
+            }).toString();
+            if (title) {
+              eventData = {
+                title: title,
+                start: start,
+                end: end
+              };
+              $element.fullCalendar('renderEvent', eventData, true); 
+            }
+        })
+        
+        
         $element.fullCalendar('unselect');
       },
       eventClick: function(event, element) {
+        
+        adicionaTurnoModalService.openRemove({ turnoId : event}).result.then(function (success){
+           console.log("evento:"+ event._id)
+           if(success) $('#calendar').fullCalendar('removeEvents', event._id)
+           
+        })
 
-        $('#calendar').fullCalendar('updateEvent', event);
-
+        console.log("evento:"+ event._id)
       },
-      editable: true,
+      editable: false,
       eventLimit: true, // allow "more" link when too many events
       events: function (start, end, timezone, callback) {
         
@@ -74,7 +86,10 @@
               var fim = $.fullCalendar.moment(dateTranlate).add( (turno.HorarioDeEncerramento - turno.HorarioDeInicio) * 60 ,'m')
 
               events.push({
-				        title: turno.Agentes.toString(),
+                id : turno.TurnoId,
+                title: turno.Agentes.map(function (agente){
+                    return agente.Nome
+                  }).toString(),
                 start: inicio,
                 end : fim,
                 description : "agente\nagente",

@@ -1,0 +1,15 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+      <em class="ion-ios-close-empty sn-link-close"></em>
+    </button>
+    <h4 class="modal-title" id="confirmaRemoveTurno">Remover Turno  {{boxCtrl.turnoId}}</h4>
+  </div>
+  <div class="modal-body">
+        Deseja remover esse turno?
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" ng-click="boxCtrl.remove(boxCtrl.turnoId)">Revomer</button>
+    <button type="button" class="btn btn-primary" ng-click="$dismiss()">Cancelar</button>
+  </div>
+</div>
